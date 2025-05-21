@@ -9,8 +9,6 @@ using namespace vex;
 
 timer Auto_T;
 
-// void (*Auto[MaxChoice])() = {&DC, &RR, &RR2, &RR3, &RL, &RL2, &RL3, &BR, &BR2,&BR3,  &BL, &BL2, &BL3, &Skills, &Test, &Motor_Test};
-
 int main(){
     Brain.Screen.clearScreen();
     #ifndef Testing

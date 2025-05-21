@@ -6,21 +6,9 @@
 #include "initialize.h"
 
 void Test(){
-    // RR();
-    // Lift_SpinTo(150, 100);
-    // task::sleep(500);
-    // Lift_SpinTo(100);
-    // Brain.Screen.clearScreen(red);
-    // SpinLR(200, -200, dps);
-    // PMTurnTo(90);
+    
     RL();
-    // PMDTurnTo(90, 24);
-    // Brain.Screen.clearScreen(green);
-    // task::sleep(3000);
-    //SpinLR(0,0);
-    // PMGo(24);
-    // PIDGo(24);
-    // RL();
+    
     Stop();
     Brain.Screen.print(GR.rotation());
     Brain.Screen.newLine();
