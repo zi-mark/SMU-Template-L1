@@ -1,4 +1,4 @@
 /bin
 /build
-/Main
+Main/
 compile_commands.json
