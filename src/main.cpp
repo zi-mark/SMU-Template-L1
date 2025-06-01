@@ -7,6 +7,10 @@
 
 using namespace vex;
 
+brain Brain;
+controller Con;
+competition Com;
+
 timer Auto_T;
 
 int main(){

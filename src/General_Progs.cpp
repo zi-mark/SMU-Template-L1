@@ -5,6 +5,12 @@
 #include "SMU_Lib/functional.h"
 #include "initialize.h"
 
+void Break(){
+    if(!Com.isFieldControl() && !Com.isCompetitionSwitch()){
+    while(!Con.ButtonA.pressing()) continue;
+    }
+}
+
 void Test(){
     
     RL();

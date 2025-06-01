@@ -1,4 +1,5 @@
 #include "robot-config.h"
+void Break();
 void RR();
 void RR2();
 void RR3();

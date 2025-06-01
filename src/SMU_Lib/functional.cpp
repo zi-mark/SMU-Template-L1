@@ -1,12 +1,6 @@
 #include "SMU_Lib/functional.h"
 #include "initialize.h"
 
-void Break(){
-    if(!Com.isFieldControl() && !Com.isCompetitionSwitch()){
-    while(!Con.ButtonA.pressing()) continue;
-    }
-}
-
 void LiftSpinToEnd(double v = 90){
     // Lift.spin(fwd, v, pct);
     // while(fabs(Lift.velocity(pct)) >= fabs(v/10)) continue;
