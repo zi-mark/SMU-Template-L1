@@ -43,6 +43,7 @@ void ProgramChoosing(){
         task::sleep(100);
     }
 }
+
 //测试函数
 void Test(){
 
@@ -94,6 +95,7 @@ void Test(){
     }
     
 }
+
 //MT专属
 void Change_Groups(int Motor_Group, int *Motor_Count, motor** Motor_Groups){
         switch (Motor_Group)
@@ -129,6 +131,7 @@ void Change_Groups(int Motor_Group, int *Motor_Count, motor** Motor_Groups){
             break;
         }
 }
+
 //MT程序主体
 void Motor_Test(){
     Con.Screen.clearScreen();
@@ -182,6 +185,7 @@ void Motor_Test(){
             else Motor_Groups[Motor_Number].stop(coast);
         }
 }
+
 //自动函数与函数名链接
 Autos Auto[]{
     {"DC ", &DC, 1}, 

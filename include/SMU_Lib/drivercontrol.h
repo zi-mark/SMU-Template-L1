@@ -1,1 +1,1 @@
-void DC();
+extern void DC();
