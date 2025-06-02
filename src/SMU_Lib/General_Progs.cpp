@@ -10,8 +10,9 @@ void Break(){
     while(!Con.ButtonA.pressing()) continue;
     }
 }
-//屏幕选程序
+
 int ProgramChoice = 0;
+//屏幕选程序
 void ProgramChoosing(){
     timer T;
     bool save = 1;
@@ -93,6 +94,7 @@ void Change_Groups(int Motor_Group, int *Motor_Count, motor** Motor_Groups){
 }
 //MT程序主体
 void Motor_Test(){
+    Con.Screen.clearScreen();
     motor* Motor_Groups = LMs;
     int Motor_Choice = 1, Motor_Count = Chassis_Count, Motor_Number = 0, MaxChoice = 4;
     bool UpSave = 1, DownSave = 1, LeftSave = 1, RightSave = 1;
