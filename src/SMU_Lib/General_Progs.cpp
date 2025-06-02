@@ -1,9 +1,9 @@
-#include "autonomous.h"
-#include "drivercontrol.h"
+#include "SMU_Lib/autonomous.h"
+#include "SMU_Lib/drivercontrol.h"
 #include "definer.h"
 #include "SMU_Lib/chasis.h"
 #include "SMU_Lib/functional.h"
-#include "initialize.h"
+
 //测自动断点
 void Break(){
     if(!Com.isFieldControl() && !Com.isCompetitionSwitch()){

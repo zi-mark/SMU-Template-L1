@@ -4,8 +4,8 @@
 
 using namespace vex;
 
-#ifdef Temp
-    #if Temp == 1
+#ifdef Exam
+    #if Exam == 1
 
     //motor 马达名字(端口，变速箱比例，是否反转 0不反转1反转);
     motor R1(PORT1, ratio6_1, 0);

@@ -31,7 +31,6 @@ extern digital_out HandLR;
 extern digital_out HandLP;
 extern digital_out HookLio;
 extern digital_out Raise;
-extern bumper Selecter;
 
 extern inertial GR;
 extern optical CLSensor;

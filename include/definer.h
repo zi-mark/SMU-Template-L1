@@ -1,6 +1,6 @@
-#define Temp 1
+#define Exam 1
 /*
-* Temp:
+* Exam:
 * 1: 12345A
 * 2: 12345B
 */

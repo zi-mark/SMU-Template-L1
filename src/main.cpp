@@ -2,7 +2,7 @@
  * 你好，我是SMU-Template的编写者Mark Ma，很高兴您使用SMU-Template作为您VEX之旅的模板程序！
  *
  * 请您注意，此模板为L1！！L1！！L1级别难度模板
- *   !L1!  |  L2  |  L3  
+ *   **L1**  |  L2  |  L3  
  * 请根据队伍自身水平选择相应模板使用
  * 
  * 请您注意，Student Center Policy是VEX项目中非常核心的价值理念和行为准则
@@ -13,7 +13,7 @@
  * 以免造成不必要的麻烦与冲突
  * 
  * 本库为本人近年来参赛经验总结而来，由于本人不是专职的编程手，代码方面有诸多不合理的地方，请大家谅解
- * 如您需要更严谨，更丰富的内容请寻找L2，L3级别的SMU-Template，谢谢
+ * 如您需要更严谨，更丰富的内容请寻找L2，L3级别的SMU-Template，谢谢!
  * 
  * Copyright (c) 2025 SMU Robotics Team
  */
@@ -21,9 +21,8 @@
 #include "vex.h"
 #include "definer.h"
 #include "robot-config.h"
-#include "autonomous.h"
-#include "drivercontrol.h"
-#include "initialize.h"
+#include "SMU_Lib/autonomous.h"
+#include "SMU_Lib/drivercontrol.h"
 
 using namespace vex;
 

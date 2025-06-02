@@ -1,15 +1,14 @@
-#include "drivercontrol.h"
+#include "SMU_Lib/drivercontrol.h"
 #include "definer.h"
 #include "robot-config.h"
 #include "SMU_Lib/chasis.h"
 #include "SMU_Lib/functional.h"
-#include "initialize.h"
 
-#ifdef Temp
+#ifdef Exam
     int lv, rv;
     bool save;
 
-    #if Temp == 1
+    #if Exam == 1
     void DC(){
     Stop(coast);
     Brain.Screen.clearScreen(black);
