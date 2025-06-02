@@ -45,17 +45,54 @@ void ProgramChoosing(){
 }
 //测试函数
 void Test(){
+
+    while(1){
+        if(Con.ButtonUp.pressing()){
+            ResetPosition();
+            PMGo(24);
+            Brain.Screen.newLine();
+            Brain.Screen.print(AverPosition(deg));
+        }
+        else if(Con.ButtonDown.pressing()){
+            ResetPosition();
+            PMGo(-24);
+            Brain.Screen.newLine();
+            Brain.Screen.print(AverPosition(deg));
+        }
+        else if(Con.ButtonA.pressing()){
+            PMTurnTo(90);
+            Brain.Screen.newLine();
+            Brain.Screen.print(GR.rotation());
+            task::sleep(3000);
+            Brain.Screen.newLine();
+            Brain.Screen.print(GR.rotation());
+        }
+        else if(Con.ButtonY.pressing()){
+            PMTurnTo(-90);
+            Brain.Screen.newLine();
+            Brain.Screen.print(GR.rotation());
+            task::sleep(3000);
+            Brain.Screen.newLine();
+            Brain.Screen.print(GR.rotation());
+        }
+        else if(Con.ButtonX.pressing()){
+            PMTurnTo(0);
+            Brain.Screen.newLine();
+            Brain.Screen.print(GR.rotation());
+            task::sleep(3000);
+            Brain.Screen.newLine();
+            Brain.Screen.print(GR.rotation());
+        }
+        else if(Con.ButtonB.pressing()){
+            PMTurnTo(180);
+            Brain.Screen.newLine();
+            Brain.Screen.print(GR.rotation());
+            task::sleep(3000);
+            Brain.Screen.newLine();
+            Brain.Screen.print(GR.rotation());
+        }
+    }
     
-    RL();
-    
-    Stop();
-    Brain.Screen.print(GR.rotation());
-    Brain.Screen.newLine();
-    task::sleep(3000);
-    Stop();
-    Brain.Screen.print(GR.rotation());
-    Brain.Screen.newLine();
-    Brain.Screen.print(AverPosition(deg));
 }
 //MT专属
 void Change_Groups(int Motor_Group, int *Motor_Count, motor** Motor_Groups){
