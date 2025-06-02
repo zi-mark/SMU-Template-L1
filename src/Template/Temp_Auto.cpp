@@ -4,9 +4,9 @@
 #include "SMU_Lib/functional.h"
 #include "initialize.h"
 
-#ifdef CSTU
+#ifdef Temp
 
-    #if CSTU == 1
+    #if Temp == 1
 
     void RR(){}
         void RR2(){}

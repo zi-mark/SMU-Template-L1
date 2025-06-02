@@ -5,11 +5,11 @@
 #include "SMU_Lib/functional.h"
 #include "initialize.h"
 
-#ifdef CSTU
+#ifdef Temp
     int lv, rv;
     bool save;
 
-    #if CSTU == 1
+    #if Temp == 1
     void DC(){
     Stop(coast);
     Brain.Screen.clearScreen(black);
@@ -33,7 +33,25 @@
     }
     #else
     void DC(){
+        Stop(coast);
+        Brain.Screen.clearScreen(black);
+        while(1){
 
+            #if DriversHabit == 1
+            lv = Con.Axis3.position() + Con.Axis4.position();
+            rv = Con.Axis3.position() - Con.Axis4.position();
+
+            #elif DriversHabit == 2
+            lv = Con.Axis3.position() + Con.Axis1.position();
+            rv = Con.Axis3.position() - Con.Axis1.position();
+
+            #endif
+
+            if(abs(lv) < 5) lv = 0;
+            if(abs(rv) < 5) rv = 0;
+            SpinLR(lv, rv);
+
+        }
     }
     #endif
 #endif
