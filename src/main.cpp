@@ -60,10 +60,9 @@ int main(){
     Con.Screen.print("Init Compelete");
     while(!Con.ButtonA.pressing()) continue;
     Auto_T.reset();
-    // Test();
-    // Skills();
-    RL();
-    // DC();
+
+    Test();
+    
     Con.Screen.print(Auto_T.value());
     DC();
     #endif
