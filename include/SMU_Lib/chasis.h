@@ -19,22 +19,10 @@ extern PM PMT;
 extern PM PMDT;
 extern PM PMG;
 
-struct PID{
-    double kp;
-    double ki;
-    double startI;
-    double kd;
-    double offset;
-    int endT;
-};
-
-extern PID PIDG;
+void PMTurnTo(double target, double kp = PMT.kp, double vmin = PMT.vmin, double offset = PMT.offset);
+void PMDTurnTo(double rtn, double r, double kp = PMDT.kp, double vmin = PMDT.vmin, double offset = PMDT.offset);
+void PMGo(double target, double kp = PMG.kp, double vmin = PMG.vmin, double offset = PMG.offset);
     
-    void PMTurnTo(double target, double kp = PMT.kp, double vmin = PMT.vmin, double offset = PMT.offset);
-    void PMDTurnTo(double rtn, double r, double kp = PMDT.kp, double vmin = PMDT.vmin, double offset = PMDT.offset);
-    void PMGo(double target, double kp = PMG.kp, double vmin = PMG.vmin, double offset = PMG.offset);
-    void PIDGo(double target, double kp = PIDG.kp, double ki = PIDG.ki, double startI = PIDG.startI, double kd = PIDG.kd, double offset = PIDG.offset, double endT = PIDG.endT);
-    void PIDTurnTo();
 
 // #ifdef SMU
 //     #if SMU == 1

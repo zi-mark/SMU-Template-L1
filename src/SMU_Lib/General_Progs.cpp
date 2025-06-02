@@ -4,13 +4,13 @@
 #include "SMU_Lib/chasis.h"
 #include "SMU_Lib/functional.h"
 #include "initialize.h"
-
+//测自动断点
 void Break(){
     if(!Com.isFieldControl() && !Com.isCompetitionSwitch()){
     while(!Con.ButtonA.pressing()) continue;
     }
 }
-
+//屏幕选程序
 int ProgramChoice = 0;
 void ProgramChoosing(){
     timer T;
@@ -42,7 +42,7 @@ void ProgramChoosing(){
         task::sleep(100);
     }
 }
-
+//测试函数
 void Test(){
     
     RL();
@@ -56,7 +56,7 @@ void Test(){
     Brain.Screen.newLine();
     Brain.Screen.print(AverPosition(deg));
 }
-
+//MT专属
 void Change_Groups(int Motor_Group, int *Motor_Count, motor** Motor_Groups){
         switch (Motor_Group)
         {
@@ -91,7 +91,7 @@ void Change_Groups(int Motor_Group, int *Motor_Count, motor** Motor_Groups){
             break;
         }
 }
-
+//MT程序主体
 void Motor_Test(){
     motor* Motor_Groups = LMs;
     int Motor_Choice = 1, Motor_Count = Chassis_Count, Motor_Number = 0, MaxChoice = 4;
@@ -143,7 +143,7 @@ void Motor_Test(){
             else Motor_Groups[Motor_Number].stop(coast);
         }
 }
-
+//自动函数与函数名链接
 Autos Auto[]{
     {"DC ", &DC, 1}, 
     {"RR ", &RR, 1}, 

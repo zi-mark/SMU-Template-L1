@@ -1,4 +1,4 @@
-#define CSTU 6
+#define CSTU 1
 // 
 //A,U,Z,W--KL 
 //Small, Big--SMU
