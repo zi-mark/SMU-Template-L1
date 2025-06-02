@@ -11,6 +11,38 @@ void Break(){
     }
 }
 
+int ProgramChoice = 0;
+void ProgramChoosing(){
+    timer T;
+    bool save = 1;
+    T.reset();
+    Con.Screen.setCursor(1,1);
+    Con.Screen.print(Auto[ProgramChoice].name);
+    Brain.Screen.setCursor(1,1);
+    Brain.Screen.print(Auto[ProgramChoice].name);
+    while(T.time() <= 3000){
+        if(Brain.Screen.pressing()){
+            if(save){
+                save = 0;
+                ProgramChoice++;
+                if(ProgramChoice == MaxChoice) ProgramChoice = 0;
+
+                Con.Screen.clearLine(1);
+                Con.Screen.setCursor(1,1);
+                Con.Screen.print(Auto[ProgramChoice].name);
+
+                Brain.Screen.clearLine(1);
+                Brain.Screen.setCursor(1,1);
+                Brain.Screen.print(Auto[ProgramChoice].name);
+
+                T.reset();
+            }
+        }
+        else save = 1;
+        task::sleep(100);
+    }
+}
+
 void Test(){
     
     RL();
