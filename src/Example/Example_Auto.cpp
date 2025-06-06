@@ -7,7 +7,7 @@
 
     #if Exam == 1
 
-    void RR(){}
+        void RR(){}
         void RR2(){}
         void RR3(){}
         void RL(){}

@@ -19,18 +19,6 @@ extern int Lift_Count;
 extern motor Lifts[];
 
 extern digital_out Hook;
-extern digital_out HookR;
-extern digital_out HookP;
-extern digital_out CLSelector;
-extern digital_out Hand;
-extern digital_out HandL;
-extern digital_out HandR;
-extern digital_out HandRR;
-extern digital_out HandRP;
-extern digital_out HandLR;
-extern digital_out HandLP;
-extern digital_out HookLio;
-extern digital_out Raise;
 
 extern inertial GR;
 extern optical CLSensor;

@@ -54,16 +54,7 @@ using namespace vex;
     optical CLSensor(PORT20);
 
     //电磁阀(三线接口);
-    digital_out HookR(Brain.ThreeWirePort.H);
-    digital_out HookP(Brain.ThreeWirePort.G);
-    digital_out HandRR(Brain.ThreeWirePort.E);
-    digital_out HandRP(Brain.ThreeWirePort.F);
-    digital_out HookLio(Brain.ThreeWirePort.D);
-    // digital_out HandR(Brain.ThreeWirePort.D);
-    digital_out HandLR(Brain.ThreeWirePort.B);
-    digital_out HandLP(Brain.ThreeWirePort.C);
-    // digital_out CLSelector(Brain.ThreeWirePort.E);
-    // bumper Selecter(Brain.ThreeWirePort.A);
+    digital_out Hook(Brain.ThreeWirePort.A);
     
     #endif
 
