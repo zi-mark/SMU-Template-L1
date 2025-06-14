@@ -11,23 +11,19 @@ using namespace vex;
     motor R1(PORT1, ratio6_1, 0);
     motor R2(PORT2, ratio6_1, 0);
     motor R3(PORT5, ratio6_1, 0);
-    motor R4(PORT3, ratio6_1, 1);
-    motor R5(PORT4, ratio6_1, 1);
 
     motor L1(PORT10, ratio6_1, 1);
     motor L2(PORT9, ratio6_1, 1);
     motor L3(PORT6, ratio6_1, 1);
-    motor L4(PORT8, ratio6_1, 0);
-    motor L5(PORT7, ratio6_1, 0);
 
-    int Chassis_Count = 5;
+    int Chassis_Count = 3;
 
-    motor LMs[] = {L1, L2, L3, L4, L5};
-    motor RMs[] = {R1, R2, R3, R4, R5};
+    motor LMs[] = {L1, L2, L3};
+    motor RMs[] = {R1, R2, R3};
 
     //轮子半径和齿轮比 马达齿/轮子齿
-    double WheelRadius = 1.375;
-    double ChasisRatio = 1;
+    double WheelRadius = 2;
+    double ChasisRatio = 35.0/60.0;
     double ChasisWidth = 7.5;
 
     //自动参数调整
