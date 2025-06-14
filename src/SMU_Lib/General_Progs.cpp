@@ -11,16 +11,180 @@ void Break(){
     }
 }
 
+void PrintChoice(int ProgramChoice){
+    switch (ProgramChoice)
+    {
+    case 0:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("DC ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("DC ");
+        break;
+    case 1:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("RR ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("RR ");
+        break;
+    case 2:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("RR2 ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("RR2 ");
+        break;
+    case 3:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("RR3 ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("RR3 ");
+        break;
+    case 4:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("RL ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("RL ");
+        break;
+    case 5:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("RL2 ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("RL2 ");
+        break;
+    case 6:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("RL3 ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("RL3 ");
+        break;
+    case 7:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("BL ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("BL ");
+        break;
+    case 8:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("BL2 ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("BL2 ");
+        break;
+    case 9:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("BL3 ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("BL3 ");
+        break;
+    case 10:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("BR ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("BR ");
+        break;
+    case 11:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("BR2 ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("BR2 ");
+        break;
+    case 12:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("BR3 ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("BR3 ");
+        break;
+    case 13:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("SK ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("SK ");
+        break;
+    case 14:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("Test ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("Test ");
+        break;
+    case 15:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("MT ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("MT ");
+        break;
+    default:
+        Con.Screen.clearLine(1);
+        Con.Screen.setCursor(1,1);
+        Con.Screen.print("Error ");
+        Brain.Screen.clearLine(1);
+        Brain.Screen.setCursor(1,1);
+        Brain.Screen.print("Error ");
+        break;
+    }
+    
+}
+
+void GetChoice(){
+    switch (ProgramChoice)
+    {
+    case 0: DC(); break;
+    case 1: RR(); break;
+    case 2: RR2(); break;
+    case 3: RR3(); break;
+    case 4: RL(); break;
+    case 5: RL2(); break;
+    case 6: RL3(); break;
+    case 7: BL(); break;
+    case 8: BL2(); break;
+    case 9: BL3(); break;
+    case 10: BR(); break;
+    case 11: BR2(); break;
+    case 12: BR3(); break;
+    case 13: Skills(); break;
+    case 14: Test(); break;
+    case 15: Motor_Test(); break;
+    default: break;
+    }
+    
+}
+
 int ProgramChoice = 0;
 //屏幕选程序
 void ProgramChoosing(){
     timer T;
     bool save = 1;
     T.reset();
-    Con.Screen.setCursor(1,1);
-    Con.Screen.print(Auto[ProgramChoice].name);
-    Brain.Screen.setCursor(1,1);
-    Brain.Screen.print(Auto[ProgramChoice].name);
+    PrintChoice(ProgramChoice);
     while(T.time() <= 3000){
         if(Brain.Screen.pressing()){
             if(save){
@@ -28,13 +192,7 @@ void ProgramChoosing(){
                 ProgramChoice++;
                 if(ProgramChoice == MaxChoice) ProgramChoice = 0;
 
-                Con.Screen.clearLine(1);
-                Con.Screen.setCursor(1,1);
-                Con.Screen.print(Auto[ProgramChoice].name);
-
-                Brain.Screen.clearLine(1);
-                Brain.Screen.setCursor(1,1);
-                Brain.Screen.print(Auto[ProgramChoice].name);
+                PrintChoice(ProgramChoice);
 
                 T.reset();
             }
@@ -185,23 +343,3 @@ void Motor_Test(){
             else Motor_Groups[Motor_Number].stop(coast);
         }
 }
-
-//自动函数与函数名链接
-Autos Auto[]{
-    {"DC ", &DC, 1}, 
-    {"RR ", &RR, 1}, 
-    {"RR2 ", &RR2, 1},
-    {"RR3 ", &RR3, 1},
-    {"RL ", &RL, 1}, 
-    {"RL2 ", &RL2, 1}, 
-    {"RL3 ", &RL3, 1}, 
-    {"BL ", &BL, 0},
-    {"BL2 ", &BL2, 0}, 
-    {"BL3 ", &BL3, 0},
-    {"BR ", &BR, 0},
-    {"BR2 ", &BR2, 0},
-    {"BR3 ", &BR3, 0},
-    {"SK ", &Skills, 1},
-    {"Test", &Test, 1},
-    {"MT ", &Motor_Test, 1}
-};

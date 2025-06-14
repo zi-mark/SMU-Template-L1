@@ -44,14 +44,14 @@ int main(){
     #ifndef Testing
     if(Com.isCompetitionSwitch() || Com.isFieldControl()){
         Com.drivercontrol(DC);
-        Com.autonomous(Auto[ProgramChoice].Funcs);
+        Com.autonomous(GetChoice);
         Con.Screen.print("Competition ");
     }
     else{
         Con.Screen.print("Not Competition ");
         while(!Con.ButtonA.pressing()) continue;
         Auto_T.reset();
-        Auto[ProgramChoice].Funcs();
+        GetChoice();
         Con.Screen.newLine();
         Con.Screen.print(Auto_T.value());
         DC();
