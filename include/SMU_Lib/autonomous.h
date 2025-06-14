@@ -5,9 +5,7 @@ void ProgramChoosing();
 extern void GetChoice();
 
 extern int ProgramChoice;
-const int MaxChoice = 16;
-
-
+#define MaxChoice 16
 //
 void Break();
 void RR();
