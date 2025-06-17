@@ -1,5 +1,5 @@
 #include "SMU_Lib/chasis.h" 
-
+//赋予底盘左右速度
 void SpinLR(double lv, double rv, vex::velocityUnits vu){
 
     for(int i = 0; i < Chassis_Count; i++){
@@ -8,21 +8,21 @@ void SpinLR(double lv, double rv, vex::velocityUnits vu){
     }
 
 }
- 
+//令底盘停止
 void Stop(brakeType bt){
     for(int i = 0; i < Chassis_Count; i++){
         LMs[i].stop(bt);
         RMs[i].stop(bt);
     }
 }
-
+//重置底盘编码器
 void ResetPosition(){
     for(int i = 0; i < Chassis_Count; i++){
         LMs[i].resetPosition();
         RMs[i].resetPosition();
     }
 }
-
+//获取底盘平均编码器数值
 double AverPosition(rotationUnits ru){
     double Position_Sum = 0.0;
     for(int i = 0; i < Chassis_Count; i++){
@@ -31,13 +31,13 @@ double AverPosition(rotationUnits ru){
     }
     return (Position_Sum / (2.0 * Chassis_Count));
 }
-
+//直走一段时间
 void Spin_T(double v, double t){
     SpinLR(v, v);
     task::sleep(t);
     Stop();
 }
-
+//PM转绝对角度
 void PMTurnTo(double target, double kp, double vmin, double offset){
     double temp, v;
     while(1){
@@ -59,7 +59,7 @@ void PMTurnTo(double target, double kp, double vmin, double offset){
     }
     Stop(hold);
 }
-
+//PM直走
 void PMGo(double target, double kp, double vmin, double offset){
     ResetPosition();
     double temp, v;
@@ -83,7 +83,7 @@ void PMGo(double target, double kp, double vmin, double offset){
     }
     Stop(hold);
 }
-
+//PM差速转
 void PMDTurnTo(double rtn, double r, double kp, double vmin, double offset){
     double temp, cv, rv, lv;
     while(1){
@@ -98,58 +98,10 @@ void PMDTurnTo(double rtn, double r, double kp, double vmin, double offset){
             else if(fabs(rv) <= vmin) SpinLR(Sign(lv)*vmin*(r+ChasisWidth/2)/(r-ChasisWidth/2), Sign(rv)*vmin, dps);
             else SpinLR(lv, rv, dps);
         }
-
-        // if(v < -vmin || v > vmin){
-        //     SpinLR(v * ratio, v, dps);
-        //     Brain.Screen.clearScreen(red);
-        // }
-        // else if(v < 0){
-        //     SpinLR(-vmin * ratio, -vmin, dps);
-        //     Brain.Screen.clearScreen(green);
-        // }
-        // else{
-        //     SpinLR(vmin * ratio, vmin, dps);
-        //     Brain.Screen.clearScreen(blue);
-        // }
     }
     Stop(hold);
 }
-
-void PIDGo(double target, double kp, double ki, double startI, double kd, double offset, double endT){
-    ResetPosition();
-    double v, staticI = 0.0, error, lasterror, P, I, D;
-    bool end;
-    timer PIDT;
-    lasterror = target = target * 360 / (2 * Pi * WheelRadius * ChasisRatio);
-    while(1){
-
-        error = target - AverPosition(deg);
-
-        if(fabs(error) <= offset){
-            if(end){
-                if(PIDT.time() >= endT) break;
-            }
-            else{
-                end = 1;
-                PIDT.reset();
-            }
-        }
-        else end = 0;
-
-        P = kp * error;
-        if(fabs(error) <= startI) staticI += v;
-        I = ki * staticI;
-        D = kd * (error - lasterror);
-
-        v = P + I + D;
-        SpinLR(v, v);
-
-        lasterror = error;
-    }
-    Brain.Screen.clearScreen(red);
-    Stop();
-}
-
+//内置编码器直走
 void Go(double target, double v, velocityUnits vu){
     target = target * 360 / (2 * Pi * WheelRadius * ChasisRatio);
     for(int i = 0; i < Chassis_Count; i++){
@@ -164,5 +116,3 @@ void Go(double target, double v, velocityUnits vu){
     }
     Stop(hold);
 }
-
-

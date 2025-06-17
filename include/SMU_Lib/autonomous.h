@@ -1,4 +1,13 @@
 #include "robot-config.h"
+//
+void Init();
+void ProgramChoosing();
+extern void GetChoice();
+
+extern int ProgramChoice;
+#define MaxChoice 16
+//
+void Break();
 void RR();
 void RR2();
 void RR3();
@@ -15,11 +24,3 @@ void Skills();
 void Motor_Test();
 void Test();
 
-struct Autos{
-    const char* name;
-    void (*Funcs)();
-    int color;
-};
-
-
-extern Autos Auto[];

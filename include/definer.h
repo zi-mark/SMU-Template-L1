@@ -1,15 +1,12 @@
-#define CSTU 6
-// 
-//A,U,Z,W--KL 
-//Small, Big--SMU
-//Small, Big, CCIT_B--CSTU
+#define Exam 1
+/*
+* Exam:
+* 1: 12345A
+* 2: 12345B
+*/
 
+//单杆/双杆
 #define DriversHabit 1
 
+//测试模式
 // #define Testing
-
-#define Selection_Type 2
-// 1-Bum 2-Screen
-
-#define GoType 2
-//1-PM 2-Go
