@@ -13,12 +13,15 @@ extern motor RMs[];
 extern motor LMs[];
 
 extern int Suck_Count;
+extern int Suck2_Count;
 extern motor Sucks[];
+extern motor Sucks2[];
 
 extern int Lift_Count;
 extern motor Lifts[];
 
 extern digital_out Hook;
+extern digital_out Pis;
 
 extern inertial GR;
 extern optical CLSensor;

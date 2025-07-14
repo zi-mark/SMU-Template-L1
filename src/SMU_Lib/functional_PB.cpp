@@ -14,6 +14,18 @@ void Suck_Stop(brakeType bt){
     }
 }
 
+void Suck2_Spin(double v, vex::velocityUnits vu){
+    for(int i = 0; i < Suck2_Count; i++){
+        Sucks2[i].spin(fwd, v, vu);
+    }
+}
+
+void Suck2_Stop(brakeType bt){
+    for(int i = 0; i < Suck2_Count; i++){
+        Sucks2[i].stop(bt);
+    }
+}
+
 void Lift_Spin(double v, velocityUnits vu){
     for(int i = 0; i < Lift_Count; i++) {
         Lifts[i].spin(fwd, v, vu);

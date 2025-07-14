@@ -1,4 +1,4 @@
-#define KL 1
+#define SC 1
 /*
 * Exam:
 * 1: 12345A
