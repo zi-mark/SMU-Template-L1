@@ -33,20 +33,20 @@ using namespace vex;
     
 
     motor LiftL(PORT19, ratio36_1, 1);
-    motor LiftR(PORT12, ratio36_1, 0);
+    motor LiftR(PORT21, ratio36_1, 0);
     // motor Lift(PORT10, ratio36_1, 0);
 
     int Lift_Count = 2;
     motor Lifts[] = {LiftL, LiftR};
 
     motor Suck(PORT20, ratio6_1, 1);
-    motor Suck2(PORT11, ratio6_1, 0);
+    motor Suck2(PORT20, ratio6_1, 0);
 
     int Suck_Count = 2;
     motor Sucks[] = {Suck, Suck2};
 
     //惯性传感器(端口);
-    inertial GR(PORT21);
+    inertial GR(PORT20);
     optical CLSensor(PORT20);
 
     //电磁阀(三线接口);

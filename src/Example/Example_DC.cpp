@@ -5,13 +5,12 @@
 #include "SMU_Lib/functional.h"
 
 #ifdef Exam
-    int lv, rv;
-    bool save;
-
     #if Exam == 1
     void DC(){
-    Stop(coast);
-    Brain.Screen.clearScreen(black);
+        int lv, rv;
+        // bool save;
+        Stop(coast);
+        Brain.Screen.clearScreen(black);
         while(1){
 
             #if DriversHabit == 1
@@ -27,11 +26,13 @@
             if(abs(lv) < 5) lv = 0;
             if(abs(rv) < 5) rv = 0;
             SpinLR(lv, rv);
-            
+
         }
     }
     #else
     void DC(){
+        int lv, rv;
+        bool save;
         Stop(coast);
         Brain.Screen.clearScreen(black);
         while(1){
