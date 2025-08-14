@@ -1,4 +1,4 @@
-#define Exam 1
+#define SC 4
 /*
 * Exam:
 * 1: 12345A

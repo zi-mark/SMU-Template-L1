@@ -4,6 +4,10 @@ extern void Suck_Spin(double v, vex::velocityUnits vu = vex::velocityUnits::pct)
 extern void Suck_Stop(brakeType bt = vex::brakeType::hold);
 extern void Suck2_Spin(double v, vex::velocityUnits vu = vex::velocityUnits::pct);
 extern void Suck2_Stop(brakeType bt = vex::brakeType::hold);
+extern void Suck3_Spin(double v, vex::velocityUnits vu = vex::velocityUnits::pct);
+extern void Suck3_Stop(brakeType bt = vex::brakeType::hold);
+extern void Suck4_Spin(double v, vex::velocityUnits vu = vex::velocityUnits::pct);
+extern void Suck4_Stop(brakeType bt = vex::brakeType::hold);
 
 extern void Lift_Spin(double v, vex::velocityUnits vu = vex::velocityUnits::pct);
 extern void Lift_Stop(brakeType bt = brakeType::hold);
